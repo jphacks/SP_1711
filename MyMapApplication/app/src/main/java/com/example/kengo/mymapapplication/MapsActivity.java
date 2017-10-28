@@ -35,6 +35,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             {42.808271,141.675186},
             {42.787599,141.681397}
     };
+    private String station[] ={"札幌","恵庭","白石",
+            "平和","新札幌","上野幌","北広島","島松",
+            "恵み野","恵庭","サッポロビール庭園","長都",
+            "千歳","南千歳","新千歳空港"};
 
 
     @Override
@@ -100,9 +104,13 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         // Add a marker in Sydney and move the camera
         LatLng sapporo = new LatLng(43.068625,141.350801);
-        mMap.setMinZoomPreference(15);
-        //LatLng sapporo2 = new LatLng(40, 141);
-        //mMap.addMarker(new MarkerOptions().position(sapporo).title("位置"));
+        mMap.setMinZoomPreference(10);
+        //LatLng position2 = new LatLng(40, 141);
+        for(int i=0;i<15;i++){
+            LatLng position2 = new LatLng(pos[i][0],pos[i][1]);
+            mMap.addMarker(new MarkerOptions().position(position2).title(station[i]));
+        }
+
         mMap.moveCamera(CameraUpdateFactory.newLatLng(sapporo));
 
     }
