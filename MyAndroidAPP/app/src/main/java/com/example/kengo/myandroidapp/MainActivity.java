@@ -21,9 +21,11 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 public class MainActivity extends Activity {
 
-    private int count = 0;
     private TextView tv;
     private Handler handler = new Handler();
     private Timer mytimer = new Timer();
@@ -59,8 +61,8 @@ public class MainActivity extends Activity {
         public void run() {
             handler.post(new Runnable() {
                 public void run() {
+                    JSONObject data = new JSONObject();
                     locationManager = (LocationManager) MainActivity.this.getSystemService(Context.LOCATION_SERVICE);
-                    //tv.setText("count=" + count+5);
                     if (ActivityCompat.checkSelfPermission(MainActivity.this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(MainActivity.this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
                         // TODO: Consider calling
                         //    ActivityCompat#requestPermissions
@@ -82,13 +84,24 @@ public class MainActivity extends Activity {
                         long currentTimeMillis = System.currentTimeMillis();
                         Calendar calendar = Calendar.getInstance();
                         calendar.setTimeInMillis(currentTimeMillis);
-                        Log.v("Test",
+                        /*Log.v("Test",
                                 (calendar.get(Calendar.HOUR_OF_DAY))+9 + ":" +
                                         calendar.get(Calendar.MINUTE) + ":" +
                                         calendar.get(Calendar.SECOND) + ":" +
                                         calendar.get(Calendar.MILLISECOND));
                         Log.d("test", Double.toString(latitude));
-                        Log.d("test", Double.toString(longitude));
+                        Log.d("test", Double.toString(longitude));*/
+                        try {
+                            data.put("time",(calendar.get(Calendar.HOUR_OF_DAY))+9 + ":" +
+                                    calendar.get(Calendar.MINUTE) + ":" +
+                                    calendar.get(Calendar.SECOND) + ":" +
+                                    calendar.get(Calendar.MILLISECOND));
+                            data.put("latitude",Double.toString(latitude));
+                            data.put("longitude",Double.toString(longitude));
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                        Log.v("json",data.toString());
                         //LatLng nowPlace = new LatLng(latitude, longitude);
                         //mMap.moveCamera(CameraUpdateFactory.newLatLng(nowPlace));
                         String centerText =
