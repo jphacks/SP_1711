@@ -1,11 +1,18 @@
 package com.example.kengo.mymapapplication;
 
+import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.icu.util.Calendar;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.beardedhen.androidbootstrap.TypefaceProvider;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -18,6 +25,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private GoogleMap mMap;
     private SeekBar sb;
     private TextView tv;
+    private Button button;
     private long time=27000000;
     private double pos[][]={{43.068625,141.350801},
             {43.068532,141.377386},
@@ -45,6 +53,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
+        button = (Button) findViewById(R.id.button);
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
@@ -60,9 +69,13 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                         //tv.setText("設定値:"+sb.getProgress());
                         Calendar calendar = Calendar.getInstance();
                         calendar.setTimeInMillis(time+progress*1000);
-                        String printtime=(calendar.get(Calendar.HOUR_OF_DAY)) + ":" +
+                        String hour =String.format("%02d", calendar.get(Calendar.HOUR_OF_DAY));
+                        String minutes = String.format("%02d", calendar.get(Calendar.MINUTE));
+                        String second = String.format("%02d", calendar.get(Calendar.SECOND));
+                        /*String printtime=(calendar.get(Calendar.HOUR_OF_DAY)) + ":" +
                                 calendar.get(Calendar.MINUTE) + ":" +
-                                calendar.get(Calendar.SECOND);
+                                calendar.get(Calendar.SECOND);*/
+                        String printtime = (hour+":"+minutes+":"+second);
                         tv.setText(printtime);
                         int num=0;
                         for(int i=0;i<15;i++) {
@@ -86,6 +99,19 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     }
                 }
         );
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // ボタンがクリックされた時に呼び出されます
+                PackageManager pm = getPackageManager();
+                Intent intent = pm.getLaunchIntentForPackage("com.Company.jphacks");
+                try {
+                    startActivity(intent);
+                } catch (Exception e) {
+                    Log.d("error","アプリが存在しません");
+                }
+            }
+        });
     }
 
 
