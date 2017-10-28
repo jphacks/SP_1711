@@ -8,9 +8,10 @@ CREATE TABLE `users`(
 
 DROP TABLE IF EXISTS `logs`;
 CREATE TABLE `logs`(
-    `id`        int(10)         unsigned    NOT NULL AUTO_INCREMENT,
-    `user_id`   int(10)         unsigned    NOT NULL,
-    `location`  geometry                    NOT NULL,
+    `id`            int(10)         unsigned    NOT NULL AUTO_INCREMENT,
+    `user_id`       int(10)         unsigned    NOT NULL,
+    `location`      geometry                    NOT NULL,
+    `created_at`    datetime                    NOT NULL,
     PRIMARY KEY (`id`)
 ) ENGINE = InnoDB DEFAULT CHARSET=utf8;
 

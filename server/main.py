@@ -1,16 +1,12 @@
-import setting as s
-import sqlalchemy as sa
+import json
 
-accessStr = 'mysql+pymysql://'\
-            + s.mysqlUser   + ':'\
-            + s.mysqlPass   + '@'\
-            + s.mysqlHost   + ':'\
-            + s.mysqlPort   + '/'\
-            + s.mysqlDB     + '?charset=utf8'
+from flask import Flask, jsonify, request
 
-engine = sa.create_engine(accessStr, echo=True)
+app = Flask(__name__)
 
-sqlPath = 'sql/initialize.sql'
-with open(sqlPath, 'r') as f:
-    ins = f.read()
-    engine.execute(ins)
+@app.route('/log', methods=['POST'])
+def post(log):
+    print(request.data)
+
+if __name__ == '__main__':
+    app.run(host = '0.0.0.0', debug = True)
