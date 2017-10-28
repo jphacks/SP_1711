@@ -125,4 +125,9 @@ public class MainActivity extends Activity {
             mythread.start();
         }
     }
+    public void onDestroy(){
+        super.onDestroy();
+        mytimer.cancel();
+    }
+
 }
