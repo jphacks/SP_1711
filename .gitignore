@@ -1,6 +1,7 @@
 .DS_Store
 .direnv/
 .envrc
+server/venv/
 server/jphacks.pem
 server/__pycache__
 server/setting.py
