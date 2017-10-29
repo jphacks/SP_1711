@@ -243,7 +243,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 1, g: 1, b: 1, a: 1}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -300,7 +300,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &281725117
 RectTransform:
   m_ObjectHideFlags: 0
@@ -613,7 +613,7 @@ MonoBehaviour:
       IKPosition: {x: 0.57504, y: 1.0660423, z: 0.039217405}
       IKPositionWeight: 1
       root: {fileID: 298070211}
-      target: {fileID: 2078993554}
+      target: {fileID: 685103703}
       IKRotationWeight: 0
       IKRotation: {x: 0.12954147, y: 0.6003959, z: 0.62058926, w: 0.4874555}
       bendNormal: {x: -0.008693344, y: -0.008705214, z: 0.00069026416}
@@ -2522,7 +2522,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2078993550}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ac5ed57e99997c744b71c580950cb05f, type: 3}
   m_Name: 
