@@ -1,5 +1,4 @@
-# 痴漢冤罪防止アプリ
-# ー       watchMe
+# 痴漢冤罪防止アプリ ー watchMe
 
 [![watchMe](https://github.com/jphacks/SP_1711/blob/master/static/title2017.png?raw=true)](https://www.youtube.com/watch?v=69jYd2lfRgI&feature=youtu.be)
 
