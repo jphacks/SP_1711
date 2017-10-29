@@ -58,3 +58,6 @@
 #### 2日間に開発した独自の機能・技術
 * 独自で開発したものの内容をこちらに記載してください
 * 特に力を入れた部分をファイルリンク、またはcommit_idを記載してください（任意）
+
+Server
+[img](https://github.com/jphacks/SP_1711/blob/master/static/sp1711.png?raw=true)
