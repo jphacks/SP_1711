@@ -1,32 +1,18 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-'''
+
+import json
+import requests
 import urllib
 import urllib2
+from datetime import datetime
 
-url = "http://34.237.68.65/user"
-params = {"id": 0, "param": "dammy"}
-params = urllib.urlencode(params)
+URL = "http://34.237.68.65/user"
 
-req = urllib2.Request(url)
-# ヘッダ設定
-req.add_header('test', 'application/x-www-form-urlencoded')
-# パラメータ設定
-req.add_data(params)
-
-
-res = urllib2.urlopen(req)
-r = res.read()
-print r
-'''
-
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-
-import requests
-
-url = "http://34.237.68.65/user"
-s = requests.session()
-params = {"id": 0, "param": "dammy"}
-r = s.post(url, data=params)
-print r.text.encode("utf-8")
+dic = {'status': 0, 'memo': '', 'nameid': 0, 'time': ''}
+dic['time'] = datetime.now().strftime("%Y/%m/%d %H:%M:%S")
+jsonstring = json.dumps(dic)
+print(jsonstring)
+response = requests.post(URL, data=jsonstring)
+print(response.status_code)    # HTTPのステータスコード取得
+print(response.text)    # レスポンスのHTMLを文字列で取得
