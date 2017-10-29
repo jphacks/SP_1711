@@ -86,10 +86,10 @@
 
 
 * サーバー、DBの機能
-    * FlaskでAPIサーバーを構築
-        * 取得したデータをAPIでDBに格納
-    * AWSによるサーバー構築
-        * 高い堅牢性
-        * 将来的に高いスケーラビリティを実現可能
+    *　FlaskでAPIサーバーを構築
+        *　取得したデータをAPIでDBに格納
+    *　AWSによるサーバー構築
+        *　高い堅牢性
+        *　将来的に高いスケーラビリティを実現可能
 
 ![](https://github.com/jphacks/SP_1711/blob/master/static/sp1711.png?raw=true)
