@@ -1,7 +1,7 @@
 # 痴漢冤罪防止アプリ
 # ー       watchMe
 
-[![watchMe](https://raw.github.com/GabLeRoux/WebMole/master/ressources/WebMole_Youtube_Video.png)](https://www.youtube.com/watch?v=69jYd2lfRgI&feature=youtu.be)
+[![watchMe](https://github.com/jphacks/SP_1711/blob/master/static/title2017.png?raw=true)](https://www.youtube.com/watch?v=69jYd2lfRgI&feature=youtu.be)
 
 ## 製品概要
 ### 通勤 x Tech
