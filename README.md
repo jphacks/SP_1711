@@ -1,4 +1,4 @@
-# サンプル（プロダクト名）
+﻿# サンプル（プロダクト名）
 
 [![Product Name](https://raw.github.com/GabLeRoux/WebMole/master/ressources/WebMole_Youtube_Video.png)](https://www.youtube.com/channel/UC4PtjOfZTbVp9DwtJv82Lzg)
 
@@ -17,6 +17,7 @@
 ### 特長
 
 #### 1. 特長1
+ -下森書いた
 
 #### 2. 特長2
 
